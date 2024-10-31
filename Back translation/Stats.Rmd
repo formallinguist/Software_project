@@ -1,0 +1,40 @@
+---
+title: "model_selection.Rmd"
+output: html_document
+date: "2024-09-20"
+---
+```{r}
+if(!require('PMCMRplus')) {
+  install.packages('PMCMRplus')
+  library('PMCMRplus')
+}
+```
+Install and load package
+
+```{r}
+ThreeVersions <- matrix(c(0.61,0.68,0.71, # F1
+                          0.61,0.68,0.71, # Precision
+                          0.61,0.68,0.71), # Recall
+  nrow = 3,
+  byrow = TRUE,
+  dimnames = list(1:3,
+                  c('Telugu','Mizo','All')
+  )
+)
+```
+This is the comparison of the metrics for Chungli Ao + Telugu / Mizo / All. 
+
+```{r}
+friedman.test(ThreeVersions)
+```
+First we do Friedman to see if any model is significantly better than the others
+based on these metrics. Note that Friedman requires more than three metrics --
+12 would be ideally per Demshar 2006, but 5 would be tolerable. 3 is not great.
+Anyway, we find that there is a significant difference.
+
+```{r}
+frdAllPairsNemenyiTest(ThreeVersions)
+```
+Nemenyi tells us which model is significantly different. We find that 'All' is 
+significantly better than Telugu, but not significantly better than 'Mizo'. 
+'Mizo' is not significantly better than 'Telugu.'
