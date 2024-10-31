@@ -1,4 +1,4 @@
-Back translation
+```Back translation
 ├── Backtranslation Dataset Creation.ipynb
 ├── BT_XLMR.ipynb
 ├── Datasets
@@ -13,16 +13,20 @@ Back translation
 │   ├── Telugu
 │   └── Telugu_extended
 └── Stats.Rmd
-
+```
 
 **Backtranslation Dataset Creation.ipynb**:
+
 Jupyter notebook for creating datasets using back translation.
 
-**BT_XLMR.ipynb**:  
+**BT_XLMR.ipynb**:
+
 Jupyter notebook for training the XLM-R model on back-translated data.
 
 **Datasets**:
+
 Folder containing datasets generated for the project. The extended datasets contain the back translated data combined with the original train sets. 
 
-**:Stats.Rmd**::
+**Stats.Rmd**:
+
 R Markdown file for statistical analysis.
