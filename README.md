@@ -12,5 +12,5 @@ Example:
 Models with additional pre-training evaluated against models without in: `pre_training/Pre_Training_Evaluation.ipynb`
 
 ## Probing
-Probe classes in: `Probing/Probe.py`
+Probe classes in: `Probing/Probe.py`  
 Probing on fine-tuned models in: `Probing/probing_mBERT.ipynb`
